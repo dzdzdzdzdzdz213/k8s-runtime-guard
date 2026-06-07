@@ -1,0 +1,6 @@
+{
+  "learning_mode": true,
+  "auto_kill": false,
+  "api_port": 9090,
+  "kubeconfig": ""
+}
