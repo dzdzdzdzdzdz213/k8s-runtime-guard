@@ -55,6 +55,11 @@ func (pm *ProcessMonitor) Start() {
 		log.Fatalf("Failed to get event reader: %v", err)
 	}
 
+	if reader == nil {
+		log.Println("No eBPF reader available — running in mock/simulation mode")
+		select {}
+	}
+
 	for {
 		record, err := reader.Read()
 		if err != nil {

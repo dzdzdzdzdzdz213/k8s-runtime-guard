@@ -5,6 +5,8 @@ package main
 import (
 	"log"
 	"time"
+
+	"github.com/cilium/ebpf/ringbuf"
 )
 
 type BPFLoader struct {
@@ -19,7 +21,7 @@ func NewBPFLoader(eng *Engine) (*BPFLoader, error) {
 	return ld, nil
 }
 
-func (ld *BPFLoader) GetEventReader() (interface{}, error) {
+func (ld *BPFLoader) GetEventReader() (*ringbuf.Reader, error) {
 	return nil, nil
 }
 
